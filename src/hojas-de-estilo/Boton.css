@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
+button{
+    width: 250px;
+    height: 80px;
+    font-size: 35px;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    background-color:transparent;
+    color: #00471b;
+    border: 2px solid ;
+    border-radius: 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Mynerve', cursive;
+}
+
+button:hover{
+    background-color: #00471b;
+    color: #fff;
+}
+
+

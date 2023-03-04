@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Boton from './componentes/Boton';
+//import Contador from './componentes/Contador';
+import { useState } from 'react';
+import phrases from './Data/phrases.json'
+import Mensaje from './componentes/Mensaje'
 
 function App() {
+  const fondos = ['url(/fondo1.png)','url(/fondo2.png)','url(/fondo3.png)','url(/fondo4.png)']
+
+  const [cambiaIndice, setCambiaIndice] = useState(0)
+  const [cambiaImagen, setCambiaImagen] = useState(0)
+  
+
+  const aleatorio = ()=>{
+    setCambiaIndice(Math.floor(Math.random()*phrases.length))
+    setCambiaImagen(Math.floor(Math.random()*fondos.length))
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{backgroundImage: fondos[cambiaImagen]}} >
+      <div className='contenedor-principal'>
+        <Mensaje dataFrase={phrases[cambiaIndice].phrase} />
+        <Boton funcionParaCambiarElindice = {aleatorio} />
+      </div> 
     </div>
   );
 }
